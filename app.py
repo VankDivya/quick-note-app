@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import sqlite3
-
 app = Flask(__name__)
-
 # Create database table
 def init_db():
     conn = sqlite3.connect('notes.db')
@@ -14,7 +12,6 @@ def init_db():
             content TEXT NOT NULL
         )
     ''')
-
     conn.commit()
     conn.close()
 
